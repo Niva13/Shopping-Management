@@ -77,9 +77,6 @@ public class register extends Fragment {
         button2.setOnClickListener(new View.OnClickListener()
         {
             @Override
-
-
-
             public void onClick(View v)
             {
                 EditText Password1, RePassword1, Email, Phone;
@@ -95,8 +92,7 @@ public class register extends Fragment {
                     if (Password1.getText().toString().equals(RePassword1.getText().toString()))
                     {
                         MainActivity mainActivity = (MainActivity) getActivity();
-
-                        mainActivity.register();
+                        mainActivity.register(view);
                     }
                     else
                     {

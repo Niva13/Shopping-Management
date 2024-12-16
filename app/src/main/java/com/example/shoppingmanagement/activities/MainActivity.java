@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.navigation.Navigation;
 
 import com.example.shoppingmanagement.R;
-import com.example.shoppingmanagement.User;
+import com.example.shoppingmanagement.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void register()
+    public void register(View view)
     {
         String email = (((EditText) findViewById(R.id.editTextTextEmailAddress)).getText().toString());
         String password = (((EditText) findViewById(R.id.PasswordinputReg)).getText().toString());
@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            //writeData();
-
+                            writeData();
                             Toast.makeText(MainActivity.this, "reg OK", Toast.LENGTH_LONG).show();
+                            Navigation.findNavController(view).navigate(R.id.action_register_to_login);
                         } else {
                             Toast.makeText(MainActivity.this, "reg Fail", Toast.LENGTH_LONG).show();
                         }
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Navigation.findNavController(view).navigate(R.id.action_login_to_after_login);
+                            Navigation.findNavController(view).navigate(R.id.action_login_to_choosing_ingredients3);
                             Toast.makeText(MainActivity.this, "Loging OK", Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(MainActivity.this, "Login Fail", Toast.LENGTH_LONG).show();
@@ -90,18 +90,19 @@ public class MainActivity extends AppCompatActivity {
         phone = ((EditText)findViewById(R.id.editTextPhone)).getText().toString();
         email = ((EditText)findViewById(R.id.editTextTextEmailAddress)).getText().toString();
 
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users").child(phone);
 
-        //User user = new User(phone,email);
+        User user = new User(phone,email);
+        myRef.setValue(user);
 
-        //myRef.setValue(user);
     }
 
     /*public void readData()
     {
         // Read from the database
-        /*myRef.addValueEventListener(new ValueEventListener() {
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
