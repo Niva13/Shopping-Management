@@ -14,10 +14,13 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.navigation.Navigation;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    /*public void writeData()
+    public void writeData()
     {
         String phone,email;
         phone = ((EditText)findViewById(R.id.editTextPhone)).getText().toString();
@@ -90,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users").child(phone);
 
-        User user = new User(phone,email);
+        //User user = new User(phone,email);
 
-        myRef.setValue(user);
+        //myRef.setValue(user);
     }
 
     /*public void readData()
