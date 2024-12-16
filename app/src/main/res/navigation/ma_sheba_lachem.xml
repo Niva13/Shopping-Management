@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ma_sheba_lachem"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.shoppingmanagement.fragments.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_login_to_after_login"
+            app:destination="@id/after_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/after_login"
+        android:name="com.example.shoppingmanagement.fragments.after_login"
+        android:label="fragment_after_login"
+        tools:layout="@layout/fragment_after_login" />
+    <fragment
+        android:id="@+id/error"
+        android:name="com.example.shoppingmanagement.fragments.Error"
+        android:label="fragment_error"
+        tools:layout="@layout/fragment_error" />
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.shoppingmanagement.fragments.register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_error"
+            app:destination="@id/error" />
+    </fragment>
+</navigation>
