@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             //writeData();
 
-                            Toast.makeText(MainActivity.this, "reg OKK", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "reg OK", Toast.LENGTH_LONG).show();
                         } else {
                             Toast.makeText(MainActivity.this, "reg Fail", Toast.LENGTH_LONG).show();
                         }
