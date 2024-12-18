@@ -2,6 +2,7 @@ package com.example.shoppingmanagement.fragments;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * create an instance of this fragment.
  */
 public class register extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,15 +81,17 @@ public class register extends Fragment {
             @Override
             public void onClick(View v)
             {
-                EditText Password1, RePassword1, Email, Phone;
+                EditText Password1, RePassword1, Email, Phone, User_name;
                 TextView ErrorTextView = view.findViewById(R.id.ErrorTextView);
+
 
                 Password1 = view.findViewById(R.id.PasswordinputReg);
                 RePassword1 = view.findViewById(R.id.RePasswordinputReg);
                 Email = view.findViewById(R.id.editTextTextEmailAddress);
                 Phone = view.findViewById(R.id.editTextPhone);
+                User_name = view.findViewById(R.id.inputUser_nameReg);
 
-                if (Password1.getText().toString().length()>=6 && !(Email.getText().toString().isEmpty()) && Phone.getText().toString().length()==10)
+                if (Password1.getText().toString().length()>=6 && !(Email.getText().toString().isEmpty()) && Phone.getText().toString().length()==10 && !(User_name.getText().toString().isEmpty()))
                 {
                     if (Password1.getText().toString().equals(RePassword1.getText().toString()))
                     {

@@ -2,15 +2,19 @@ package com.example.shoppingmanagement.fragments;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.activities.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +22,16 @@ import com.example.shoppingmanagement.R;
  * create an instance of this fragment.
  */
 public class choosing_ingredients extends Fragment {
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+            }
+        });
+    }
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,9 +80,83 @@ public class choosing_ingredients extends Fragment {
 
         View view =  inflater.inflate(R.layout.fragment_choosing_ingredients, container, false);
         TextView userPofileTB = view.findViewById(R.id.the_user_profile);
+        Button button = view.findViewById(R.id.logout);
+
+        Button cheeses = view.findViewById(R.id.cheesesButton);
+        Button vegetables = view.findViewById(R.id.vegetablesButton);
+        Button fruits = view.findViewById(R.id.fruitButton);
+        Button meat = view.findViewById(R.id.meatButton);
+        Button cleaning_materials = view.findViewById(R.id.cleaning_materialsButton);
+        Button snacks = view.findViewById(R.id.snacksButton);
+
+
 
         //String userPofile = readData();
         //userPofileTB.setText(userPofile);
+
+
+
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_login);
+            }
+        });
+        cheeses.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_cheeses);
+            }
+        });
+        vegetables.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_vegetables);
+            }
+        });
+        fruits.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_fruits);
+            }
+        });
+        meat.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_meat);
+            }
+        });
+        cleaning_materials.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_cleaning_materials);
+            }
+        });
+        snacks.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_snacks);
+            }
+        });
+
+
+
+
+
 
 
 

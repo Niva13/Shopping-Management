@@ -27,6 +27,23 @@
         android:inputType="textEmailAddress" />
 
     <TextView
+        android:id="@+id/user_nameReg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="User Name:"
+        android:textSize="32dp" />
+
+    <EditText
+        android:id="@+id/inputUser_nameReg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="32dp" />
+
+    <TextView
         android:id="@+id/PasswordReg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

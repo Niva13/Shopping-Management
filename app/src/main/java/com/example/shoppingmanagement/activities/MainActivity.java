@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         String email = (((EditText) findViewById(R.id.editTextTextEmailAddress)).getText().toString());
         String password = (((EditText) findViewById(R.id.PasswordinputReg)).getText().toString());
 
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
         {
@@ -86,15 +87,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void writeData()
     {
-        String phone,email;
+        String phone,email,user_name;
         phone = ((EditText)findViewById(R.id.editTextPhone)).getText().toString();
         email = ((EditText)findViewById(R.id.editTextTextEmailAddress)).getText().toString();
+        user_name = ((EditText)findViewById(R.id.inputUser_nameReg)).getText().toString();
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users").child(phone);
 
-        User user = new User(phone,email);
+        User user = new User(phone,user_name,email);
         myRef.setValue(user);
 
     }

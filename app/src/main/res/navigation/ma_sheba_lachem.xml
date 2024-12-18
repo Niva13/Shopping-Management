@@ -37,5 +37,57 @@
         android:id="@+id/choosing_ingredients3"
         android:name="com.example.shoppingmanagement.fragments.choosing_ingredients"
         android:label="fragment_choosing_ingredients"
-        tools:layout="@layout/fragment_choosing_ingredients" />
+        tools:layout="@layout/fragment_choosing_ingredients" >
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_fruits"
+            app:destination="@id/fragment_fruits" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_vegetables"
+            app:destination="@id/fragment_vegetables" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_meat"
+            app:destination="@id/fragment_meat" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_cheeses"
+            app:destination="@id/fragment_cheeses" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_cleaning_materials"
+            app:destination="@id/fragment_cleaning_materials" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_fragment_snacks"
+            app:destination="@id/fragment_snacks" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_cheeses"
+        android:name="com.example.shoppingmanagement.fragments.fragment_cheeses"
+        android:label="fragment_cheeses"
+        tools:layout="@layout/fragment_cheeses" />
+    <fragment
+        android:id="@+id/fragment_cleaning_materials"
+        android:name="com.example.shoppingmanagement.fragments.fragment_cleaning_materials"
+        android:label="fragment_cleaning_materials"
+        tools:layout="@layout/fragment_cleaning_materials" />
+    <fragment
+        android:id="@+id/fragment_fruits"
+        android:name="com.example.shoppingmanagement.fragments.fragment_fruits"
+        android:label="fragment_fruits"
+        tools:layout="@layout/fragment_fruits" />
+    <fragment
+        android:id="@+id/fragment_meat"
+        android:name="com.example.shoppingmanagement.fragments.fragment_meat"
+        android:label="fragment_meat"
+        tools:layout="@layout/fragment_meat" />
+    <fragment
+        android:id="@+id/fragment_snacks"
+        android:name="com.example.shoppingmanagement.fragments.fragment_snacks"
+        android:label="fragment_snacks"
+        tools:layout="@layout/fragment_snacks" />
+    <fragment
+        android:id="@+id/fragment_vegetables"
+        android:name="com.example.shoppingmanagement.fragments.fragment_vegetables"
+        android:label="fragment_vegetables"
+        tools:layout="@layout/fragment_vegetables" />
 </navigation>

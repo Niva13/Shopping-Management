@@ -12,6 +12,9 @@ import android.widget.Button;
 
 import com.example.shoppingmanagement.R;
 import com.example.shoppingmanagement.activities.MainActivity;
+import androidx.activity.OnBackPressedCallback;
+import androidx.fragment.app.Fragment;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +22,16 @@ import com.example.shoppingmanagement.activities.MainActivity;
  * create an instance of this fragment.
  */
 public class login extends Fragment {
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+            }
+        });
+    }
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -86,6 +99,9 @@ public class login extends Fragment {
 
             }
         });
+
+
+
 
         return view;
     }
