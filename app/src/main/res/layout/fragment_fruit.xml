@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.Meat">
+    tools:context=".fragments.Fruit">
+
+    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Meat:"
-        android:textSize="32dp" />
+        android:text="Fruits:"
+        android:textSize="32dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,22 +22,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Chicken_breast"
+            android:id="@+id/Banana"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Chicken Breast:"
+            android:text="Banana:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncChicken_breast"
+            android:id="@+id/IncBanana"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumChicken_breast"
+            android:id="@+id/sumBanana"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -44,12 +46,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecChicken_breast"
+            android:id="@+id/DecBanana"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -59,22 +60,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Chicken_liver"
+            android:id="@+id/Apple"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Chicken Liver:"
+            android:text="Apple:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncChicken_liver"
+            android:id="@+id/IncApple"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumChicken_liver"
+            android:id="@+id/sumApple"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,12 +84,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecChicken_liver"
+            android:id="@+id/DecApple"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -98,22 +98,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Schnitzel"
+            android:id="@+id/Orange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Schnitzel:"
+            android:text="Orange:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncSchnitzel"
+            android:id="@+id/IncOrange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumSchnitzel"
+            android:id="@+id/sumOrange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -122,12 +122,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecSchnitzel"
+            android:id="@+id/DecOrange"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -137,22 +136,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Entrecote"
+            android:id="@+id/Clementine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Entrecote:"
+            android:text="Clementine:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncEntrecote"
+            android:id="@+id/IncClementine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumEntrecote"
+            android:id="@+id/sumClementine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -161,12 +160,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecEntrecote"
+            android:id="@+id/DecClementine"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -176,22 +174,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Wings"
+            android:id="@+id/Pear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Wings:"
+            android:text="Pear:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncWings"
+            android:id="@+id/IncPear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumWings"
+            android:id="@+id/sumPear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -200,12 +198,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecWings"
+            android:id="@+id/DecPear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -215,22 +212,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Hot_dog"
+            android:id="@+id/Strawberries"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Hot Dog:"
+            android:text="Strawberries:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncHot_dog"
+            android:id="@+id/IncStrawberries"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumHot_dog"
+            android:id="@+id/sumStrawberries"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -239,12 +236,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecHot_dog"
+            android:id="@+id/DecStrawberries"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -254,22 +250,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Asado"
+            android:id="@+id/Watermelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Asado:"
+            android:text="Watermelon:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncAsado"
+            android:id="@+id/IncWatermelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumAsado"
+            android:id="@+id/sumWatermelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -278,12 +274,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecAsado"
+            android:id="@+id/DecWatermelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -293,22 +288,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Salmon"
+            android:id="@+id/Melon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Salmon:"
+            android:text="Melon:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncSalmon"
+            android:id="@+id/IncMelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumSalmon"
+            android:id="@+id/sumMelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -317,12 +312,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecSalmon"
+            android:id="@+id/DecMelon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -332,22 +326,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Tuna"
+            android:id="@+id/Dates"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Tuna:"
+            android:text="Dates:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncTuna"
+            android:id="@+id/IncDates"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumTuna"
+            android:id="@+id/sumDates"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -356,12 +350,11 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecTuna"
+            android:id="@+id/DecDates"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -371,22 +364,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Kebab"
+            android:id="@+id/Coconut"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Kebab:"
+            android:text="Coconut:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncKebab"
+            android:id="@+id/IncCoconut"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumKebab"
+            android:id="@+id/sumCoconut"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -395,7 +388,7 @@
             android:textSize="15dp"/>
 
         <Button
-            android:id="@+id/DecKebab"
+            android:id="@+id/DecCoconut"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -404,10 +397,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/add_meat"
+        android:id="@+id/add_fruits"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="add meat to your cart" />
+        android:text="add fruits to your cart" />
 
 </LinearLayout>

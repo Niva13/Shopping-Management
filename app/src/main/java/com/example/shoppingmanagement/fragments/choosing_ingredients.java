@@ -16,12 +16,17 @@ import android.widget.TextView;
 import com.example.shoppingmanagement.R;
 import com.example.shoppingmanagement.activities.MainActivity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link choosing_ingredients#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class choosing_ingredients extends Fragment {
+
+    public Map<String,Integer>itemsList = new HashMap<>();
 
     @Override
     public void onResume() {
@@ -81,6 +86,7 @@ public class choosing_ingredients extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_choosing_ingredients, container, false);
         TextView userPofileTB = view.findViewById(R.id.the_user_profile);
         Button button = view.findViewById(R.id.logout);
+        MainActivity mainActivity = (MainActivity) getActivity();
 
         Button cheeses = view.findViewById(R.id.cheesesButton);
         Button vegetables = view.findViewById(R.id.vegetablesButton);
@@ -89,10 +95,25 @@ public class choosing_ingredients extends Fragment {
         Button cleaning_materials = view.findViewById(R.id.cleaning_materialsButton);
         Button snacks = view.findViewById(R.id.snacksButton);
 
+        String[] all_items = {
+                "Milk", "Brie", "Yellow Cheese", "Cottage", "White Cheese", "Feta", "Cheddar", "Parmigiano", "Halloumi", "Cream",
+                "Carrot", "Cucumber", "Tomato", "Potato", "Lettuce", "Cabbage", "Pepper", "Garlic", "Onion", "Corn",
+                "Chicken breast", "Chicken liver", "Schnitzel", "Entrecote", "Wings", "Hot dog", "Asado", "Salmon", "Tuna", "Kebab",
+                "Banana", "Apple", "Orange", "Clementine", "Pear", "Strawberries", "Watermelon", "Melon", "Dates", "Coconut",
+                "Chocolate", "Potato Chips", "Bamba", "Doritos", "Popcorn", "Beasley", "M And M", "Marshmallow", "Toffee", "Gummy Bears",
+                "Bleach", "Dish Soap", "Broom", "Washing Gel", "Body Soap", "Shampoo", "Hair Conditioner", "Toilet Paper", "Toothbrush", "Toothpaste"};
+
+        for(int i=0; i< all_items.length; i++)
+        {
+            itemsList.put(all_items[i],0);
+        }
 
 
-        //String userPofile = readData();
+
+        //String userPofile =
+        mainActivity.readData();
         //userPofileTB.setText(userPofile);
+
 
 
 
@@ -104,52 +125,64 @@ public class choosing_ingredients extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_login);
             }
         });
+
+
         cheeses.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_cheeses);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_cheeses);
             }
         });
+
+
         vegetables.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_vegetables);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_vevetable);
             }
         });
+
+
         fruits.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_fruits);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fruit);
             }
         });
+
+
         meat.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_meat);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_meat);
             }
         });
+
+
         cleaning_materials.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_cleaning_materials);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_cleaning);
             }
         });
+
+
         snacks.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_fragment_snacks);
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_snacks);
             }
         });
 

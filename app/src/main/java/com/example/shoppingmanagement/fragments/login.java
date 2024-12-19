@@ -89,6 +89,7 @@ public class login extends Fragment {
 
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.login(view);
+
             }
         });
 

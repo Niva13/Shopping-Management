@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_snacks#newInstance} factory method to
+ * Use the {@link Snacks#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_snacks extends Fragment {
+public class Snacks extends Fragment {
+    public Map<String,Integer> SnacksList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class fragment_snacks extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_snacks() {
+    public Snacks() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class fragment_snacks extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_snacks.
+     * @return A new instance of fragment Snacks.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_snacks newInstance(String param1, String param2) {
-        fragment_snacks fragment = new fragment_snacks();
+    public static Snacks newInstance(String param1, String param2) {
+        Snacks fragment = new Snacks();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,16 @@ public class fragment_snacks extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_snacks, container, false);
+        View view = inflater.inflate(R.layout.fragment_snacks, container, false);
+
+
+        String[] Snacks_items = {"Chocolate", "Potato Chips", "Bamba", "Doritos", "Popcorn", "Beasley", "M And M", "Marshmallow", "Toffee", "Gummy Bears",};
+
+        for(int i=0; i< Snacks_items.length; i++)
+        {
+            SnacksList.put(Snacks_items[i],0);
+        }
+
+        return view;
     }
 }

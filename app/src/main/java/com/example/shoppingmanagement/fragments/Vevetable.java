@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_meat#newInstance} factory method to
+ * Use the {@link Vevetable#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_meat extends Fragment {
+public class Vevetable extends Fragment {
+    public Map<String,Integer> VegetableList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class fragment_meat extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_meat() {
+    public Vevetable() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class fragment_meat extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_meat.
+     * @return A new instance of fragment Vevetable.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_meat newInstance(String param1, String param2) {
-        fragment_meat fragment = new fragment_meat();
+    public static Vevetable newInstance(String param1, String param2) {
+        Vevetable fragment = new Vevetable();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,15 @@ public class fragment_meat extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_meat, container, false);
+        View view = inflater.inflate(R.layout.fragment_vevetable, container, false);
+
+        String[] Vegetable_items = {"Carrot", "Cucumber", "Tomato", "Potato", "Lettuce", "Cabbage", "Pepper", "Garlic", "Onion", "Corn"};
+
+        for(int i=0; i< Vegetable_items.length; i++)
+        {
+            VegetableList.put(Vegetable_items[i],0);
+        }
+
+        return view;
     }
 }

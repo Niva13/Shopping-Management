@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_fruits#newInstance} factory method to
+ * Use the {@link Fruit#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_fruits extends Fragment {
+public class Fruit extends Fragment {
+    public Map<String,Integer> FruitList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class fragment_fruits extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_fruits() {
+    public Fruit() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class fragment_fruits extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_fruits.
+     * @return A new instance of fragment Fruit.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_fruits newInstance(String param1, String param2) {
-        fragment_fruits fragment = new fragment_fruits();
+    public static Fruit newInstance(String param1, String param2) {
+        Fruit fragment = new Fruit();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,15 @@ public class fragment_fruits extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fruits, container, false);
+        View view = inflater.inflate(R.layout.fragment_fruit, container, false);
+
+        String[] Fruit_items = {"Banana", "Apple", "Orange", "Clementine", "Pear", "Strawberries", "Watermelon", "Melon", "Dates", "Coconut",};
+
+        for(int i=0; i< Fruit_items.length; i++)
+        {
+            FruitList.put(Fruit_items[i],0);
+        }
+
+        return view;
     }
 }

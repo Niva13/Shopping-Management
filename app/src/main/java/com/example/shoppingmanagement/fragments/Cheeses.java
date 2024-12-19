@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link after_login#newInstance} factory method to
+ * Use the {@link Cheeses#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class after_login extends Fragment {
+public class Cheeses extends Fragment {
+    public Map<String,Integer> CheesesList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class after_login extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public after_login() {
+    public Cheeses() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class after_login extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment after_login.
+     * @return A new instance of fragment Cheeses.
      */
     // TODO: Rename and change types and number of parameters
-    public static after_login newInstance(String param1, String param2) {
-        after_login fragment = new after_login();
+    public static Cheeses newInstance(String param1, String param2) {
+        Cheeses fragment = new Cheeses();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,15 @@ public class after_login extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_after_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_cheeses, container, false);
+
+        String[] Cheeses_Item = {"Milk", "Brie", "Yellow Cheese", "Cottage", "White Cheese", "Feta", "Cheddar", "Parmigiano", "Halloumi", "Cream"};
+
+        for(int i=0; i< Cheeses_Item.length; i++)
+        {
+            CheesesList.put(Cheeses_Item[i],0);
+        }
+
+        return view;
     }
 }

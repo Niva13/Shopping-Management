@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.Meat">
+    tools:context=".fragments.Vevetable">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Meat:"
+        android:text="Vegetables:"
         android:textSize="32dp" />
 
     <LinearLayout
@@ -20,22 +20,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Chicken_breast"
+            android:id="@+id/Carrot"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Chicken Breast:"
+            android:text="Carrot:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncChicken_breast"
+            android:id="@+id/IncCarrot"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumChicken_breast"
+            android:id="@+id/sumCarrot"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -44,7 +44,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecChicken_breast"
+            android:id="@+id/DecCarrot"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -59,22 +59,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Chicken_liver"
+            android:id="@+id/Cucumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Chicken Liver:"
+            android:text="Cucumber:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncChicken_liver"
+            android:id="@+id/IncCucumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumChicken_liver"
+            android:id="@+id/sumCucumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,7 +83,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecChicken_liver"
+            android:id="@+id/DecCucumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -98,22 +98,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Schnitzel"
+            android:id="@+id/Tomato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Schnitzel:"
+            android:text="Tomato:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncSchnitzel"
+            android:id="@+id/IncTomato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumSchnitzel"
+            android:id="@+id/sumTomato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -122,7 +122,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecSchnitzel"
+            android:id="@+id/DecTomato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -137,22 +137,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Entrecote"
+            android:id="@+id/Potato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Entrecote:"
+            android:text="Potato:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncEntrecote"
+            android:id="@+id/IncPotato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumEntrecote"
+            android:id="@+id/sumPotato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -161,7 +161,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecEntrecote"
+            android:id="@+id/DecPotato"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -176,22 +176,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Wings"
+            android:id="@+id/Lettuce"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Wings:"
+            android:text="Lettuce:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncWings"
+            android:id="@+id/IncLettuce"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumWings"
+            android:id="@+id/sumLettuce"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -200,7 +200,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecWings"
+            android:id="@+id/DecLettuce"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -215,22 +215,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Hot_dog"
+            android:id="@+id/Cabbage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Hot Dog:"
+            android:text="Cabbage:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncHot_dog"
+            android:id="@+id/IncCabbage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumHot_dog"
+            android:id="@+id/sumCabbage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -239,7 +239,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecHot_dog"
+            android:id="@+id/DecCabbage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -254,22 +254,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Asado"
+            android:id="@+id/Pepper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Asado:"
+            android:text="Pepper:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncAsado"
+            android:id="@+id/IncPepper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumAsado"
+            android:id="@+id/sumPepper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -278,7 +278,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecAsado"
+            android:id="@+id/DecPepper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -293,22 +293,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Salmon"
+            android:id="@+id/Garlic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Salmon:"
+            android:text="Garlic:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncSalmon"
+            android:id="@+id/IncGarlic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumSalmon"
+            android:id="@+id/sumGarlic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -317,7 +317,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecSalmon"
+            android:id="@+id/DecGarlic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -332,22 +332,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Tuna"
+            android:id="@+id/Onion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Tuna:"
+            android:text="Onion:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncTuna"
+            android:id="@+id/IncOnion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumTuna"
+            android:id="@+id/sumOnion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -356,7 +356,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/DecTuna"
+            android:id="@+id/DecOnion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -371,22 +371,22 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/Kebab"
+            android:id="@+id/Corn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:text="Kebab:"
+            android:text="Corn:"
             android:textSize="25dp" />
 
         <Button
-            android:id="@+id/IncKebab"
+            android:id="@+id/IncCorn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+" />
 
         <TextView
-            android:id="@+id/sumKebab"
+            android:id="@+id/sumCorn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -395,7 +395,7 @@
             android:textSize="15dp"/>
 
         <Button
-            android:id="@+id/DecKebab"
+            android:id="@+id/DecCorn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -404,10 +404,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/add_meat"
+        android:id="@+id/add_snacks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="add meat to your cart" />
+        android:text="add vegetable to your cart" />
 
 </LinearLayout>

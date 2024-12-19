@@ -1,11 +1,8 @@
 package com.example.shoppingmanagement.fragments;
 
-
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,15 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_cheeses#newInstance} factory method to
+ * Use the {@link Meat#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_cheeses extends Fragment {
+public class Meat extends Fragment {
+    public Map<String,Integer> MeatList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,7 +30,7 @@ public class fragment_cheeses extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_cheeses() {
+    public Meat() {
         // Required empty public constructor
     }
 
@@ -42,11 +40,11 @@ public class fragment_cheeses extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_cheeses.
+     * @return A new instance of fragment Meat.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_cheeses newInstance(String param1, String param2) {
-        fragment_cheeses fragment = new fragment_cheeses();
+    public static Meat newInstance(String param1, String param2) {
+        Meat fragment = new Meat();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,7 +65,14 @@ public class fragment_cheeses extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_cheeses, container, false);
+        View view = inflater.inflate(R.layout.fragment_meat, container, false);
+
+        String[] Meat_items = {"Chicken breast", "Chicken liver", "Schnitzel", "Entrecote", "Wings", "Hot dog", "Asado", "Salmon", "Tuna", "Kebab",};
+
+        for(int i=0; i< Meat_items.length; i++)
+        {
+            MeatList.put(Meat_items[i],0);
+        }
 
         return view;
     }

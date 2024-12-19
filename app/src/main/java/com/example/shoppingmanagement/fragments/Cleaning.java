@@ -10,12 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.shoppingmanagement.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_vegetables#newInstance} factory method to
+ * Use the {@link Cleaning#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_vegetables extends Fragment {
+public class Cleaning extends Fragment {
+    public Map<String,Integer> CleaningList = new HashMap<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +30,7 @@ public class fragment_vegetables extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_vegetables() {
+    public Cleaning() {
         // Required empty public constructor
     }
 
@@ -36,11 +40,11 @@ public class fragment_vegetables extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_vegetables.
+     * @return A new instance of fragment Cleaning.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_vegetables newInstance(String param1, String param2) {
-        fragment_vegetables fragment = new fragment_vegetables();
+    public static Cleaning newInstance(String param1, String param2) {
+        Cleaning fragment = new Cleaning();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +65,15 @@ public class fragment_vegetables extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vegetables, container, false);
+        View view = inflater.inflate(R.layout.fragment_cleaning, container, false);
+
+        String[] Cleaning_items = {"Bleach", "Dish Soap", "Broom", "Washing Gel", "Body Soap", "Shampoo", "Hair Conditioner", "Toilet Paper", "Toothbrush", "Toothpaste"};
+
+        for(int i=0; i< Cleaning_items.length; i++)
+        {
+            CleaningList.put(Cleaning_items[i],0);
+        }
+
+        return view;
     }
 }

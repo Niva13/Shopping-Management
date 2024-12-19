@@ -42,52 +42,52 @@
             android:id="@+id/action_choosing_ingredients3_to_login"
             app:destination="@id/login" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_fruits"
-            app:destination="@id/fragment_fruits" />
+            android:id="@+id/action_choosing_ingredients3_to_cheeses"
+            app:destination="@id/cheeses" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_vegetables"
-            app:destination="@id/fragment_vegetables" />
+            android:id="@+id/action_choosing_ingredients3_to_snacks"
+            app:destination="@id/snacks" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_meat"
-            app:destination="@id/fragment_meat" />
+            android:id="@+id/action_choosing_ingredients3_to_meat"
+            app:destination="@id/meat" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_cheeses"
-            app:destination="@id/fragment_cheeses" />
+            android:id="@+id/action_choosing_ingredients3_to_fruit"
+            app:destination="@id/fruit" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_cleaning_materials"
-            app:destination="@id/fragment_cleaning_materials" />
+            android:id="@+id/action_choosing_ingredients3_to_vevetable"
+            app:destination="@id/vevetable" />
         <action
-            android:id="@+id/action_choosing_ingredients3_to_fragment_snacks"
-            app:destination="@id/fragment_snacks" />
+            android:id="@+id/action_choosing_ingredients3_to_cleaning"
+            app:destination="@id/cleaning" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_cheeses"
-        android:name="com.example.shoppingmanagement.fragments.fragment_cheeses"
+        android:id="@+id/cheeses"
+        android:name="com.example.shoppingmanagement.fragments.Cheeses"
         android:label="fragment_cheeses"
         tools:layout="@layout/fragment_cheeses" />
     <fragment
-        android:id="@+id/fragment_cleaning_materials"
-        android:name="com.example.shoppingmanagement.fragments.fragment_cleaning_materials"
-        android:label="fragment_cleaning_materials"
-        tools:layout="@layout/fragment_cleaning_materials" />
+        android:id="@+id/cleaning"
+        android:name="com.example.shoppingmanagement.fragments.Cleaning"
+        android:label="fragment_cleaning"
+        tools:layout="@layout/fragment_cleaning" />
     <fragment
-        android:id="@+id/fragment_fruits"
-        android:name="com.example.shoppingmanagement.fragments.fragment_fruits"
-        android:label="fragment_fruits"
-        tools:layout="@layout/fragment_fruits" />
+        android:id="@+id/fruit"
+        android:name="com.example.shoppingmanagement.fragments.Fruit"
+        android:label="fragment_fruit"
+        tools:layout="@layout/fragment_fruit" />
     <fragment
-        android:id="@+id/fragment_meat"
-        android:name="com.example.shoppingmanagement.fragments.fragment_meat"
+        android:id="@+id/meat"
+        android:name="com.example.shoppingmanagement.fragments.Meat"
         android:label="fragment_meat"
         tools:layout="@layout/fragment_meat" />
     <fragment
-        android:id="@+id/fragment_snacks"
-        android:name="com.example.shoppingmanagement.fragments.fragment_snacks"
+        android:id="@+id/snacks"
+        android:name="com.example.shoppingmanagement.fragments.Snacks"
         android:label="fragment_snacks"
         tools:layout="@layout/fragment_snacks" />
     <fragment
-        android:id="@+id/fragment_vegetables"
-        android:name="com.example.shoppingmanagement.fragments.fragment_vegetables"
-        android:label="fragment_vegetables"
-        tools:layout="@layout/fragment_vegetables" />
+        android:id="@+id/vevetable"
+        android:name="com.example.shoppingmanagement.fragments.Vevetable"
+        android:label="fragment_vevetable"
+        tools:layout="@layout/fragment_vevetable" />
 </navigation>
