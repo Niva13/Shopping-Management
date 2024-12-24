@@ -44,18 +44,20 @@
         android:id="@+id/Login"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="0.8"
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"
+        android:layout_weight="0.8"
+        android:background="@drawable/buttons_design"
         android:text="Login" />
 
     <Button
         android:id="@+id/Reg"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="0.8"
         android:layout_gravity="center"
         android:layout_marginBottom="30dp"
+        android:layout_weight="0.8"
+        android:background="@drawable/buttons_design"
         android:text="Reg" />
 
 </LinearLayout>

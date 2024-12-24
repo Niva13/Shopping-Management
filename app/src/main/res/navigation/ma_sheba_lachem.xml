@@ -59,35 +59,71 @@
         <action
             android:id="@+id/action_choosing_ingredients3_to_cleaning"
             app:destination="@id/cleaning" />
+        <action
+            android:id="@+id/action_choosing_ingredients3_to_checkout2"
+            app:destination="@id/checkout2" />
     </fragment>
     <fragment
         android:id="@+id/cheeses"
         android:name="com.example.shoppingmanagement.fragments.Cheeses"
         android:label="fragment_cheeses"
-        tools:layout="@layout/fragment_cheeses" />
+        tools:layout="@layout/fragment_cheeses" >
+        <action
+            android:id="@+id/action_cheeses_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
     <fragment
         android:id="@+id/cleaning"
         android:name="com.example.shoppingmanagement.fragments.Cleaning"
         android:label="fragment_cleaning"
-        tools:layout="@layout/fragment_cleaning" />
+        tools:layout="@layout/fragment_cleaning" >
+        <action
+            android:id="@+id/action_cleaning_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
     <fragment
         android:id="@+id/fruit"
         android:name="com.example.shoppingmanagement.fragments.Fruit"
         android:label="fragment_fruit"
-        tools:layout="@layout/fragment_fruit" />
+        tools:layout="@layout/fragment_fruit" >
+        <action
+            android:id="@+id/action_fruit_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
     <fragment
         android:id="@+id/meat"
         android:name="com.example.shoppingmanagement.fragments.Meat"
         android:label="fragment_meat"
-        tools:layout="@layout/fragment_meat" />
+        tools:layout="@layout/fragment_meat" >
+        <action
+            android:id="@+id/action_meat_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
     <fragment
         android:id="@+id/snacks"
         android:name="com.example.shoppingmanagement.fragments.Snacks"
         android:label="fragment_snacks"
-        tools:layout="@layout/fragment_snacks" />
+        tools:layout="@layout/fragment_snacks" >
+        <action
+            android:id="@+id/action_snacks_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
     <fragment
         android:id="@+id/vevetable"
         android:name="com.example.shoppingmanagement.fragments.Vevetable"
         android:label="fragment_vevetable"
-        tools:layout="@layout/fragment_vevetable" />
+        tools:layout="@layout/fragment_vevetable" >
+        <action
+            android:id="@+id/action_vevetable_to_choosing_ingredients3"
+            app:destination="@id/choosing_ingredients3" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkout2"
+        android:name="com.example.shoppingmanagement.fragments.checkout"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkout2_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>

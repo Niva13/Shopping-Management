@@ -3,12 +3,16 @@ package com.example.shoppingmanagement.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.activities.MainActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,11 +72,120 @@ public class Cleaning extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cleaning, container, false);
 
         String[] Cleaning_items = {"Bleach", "Dish Soap", "Broom", "Washing Gel", "Body Soap", "Shampoo", "Hair Conditioner", "Toilet Paper", "Toothbrush", "Toothpaste"};
+        Button checkout = view.findViewById(R.id.add_cleaning);
 
-        for(int i=0; i< Cleaning_items.length; i++)
+        Button[] buttonsIds ={
+                view.findViewById(R.id.IncBleach),
+                view.findViewById(R.id.DecBleach),
+                view.findViewById(R.id.IncDish_Soap),
+                view.findViewById(R.id.DecDish_Soap),
+                view.findViewById(R.id.IncBroom),
+                view.findViewById(R.id.DecBroom),
+                view.findViewById(R.id.IncWashing_Gel),
+                view.findViewById(R.id.DecWashing_Gel),
+                view.findViewById(R.id.IncBody_Soap),
+                view.findViewById(R.id.DecBody_Soap),
+                view.findViewById(R.id.IncShampoo),
+                view.findViewById(R.id.DecShampoo),
+                view.findViewById(R.id.IncHair_Conditioner),
+                view.findViewById(R.id.DecHair_Conditioner),
+                view.findViewById(R.id.IncToilet_Paper),
+                view.findViewById(R.id.DecToilet_Paper),
+                view.findViewById(R.id.IncToothbrush),
+                view.findViewById(R.id.DecToothbrush),
+                view.findViewById(R.id.IncToothpaste),
+                view.findViewById(R.id.DecToothpaste)
+                };
+
+
+
+        TextView[] textViewsId = {
+                view.findViewById(R.id.sumBleach),
+                view.findViewById(R.id.sumDish_Soap),
+                view.findViewById(R.id.sumBroom),
+                view.findViewById(R.id.sumWashing_Gel),
+                view.findViewById(R.id.sumBody_Soap),
+                view.findViewById(R.id.sumShampoo),
+                view.findViewById(R.id.sumHair_Conditioner),
+                view.findViewById(R.id.sumToilet_Paper),
+                view.findViewById(R.id.sumToothbrush),
+                view.findViewById(R.id.sumToothpaste)
+                };
+
+
+        int k = 0;
+
+        for (int i=0; i<buttonsIds.length; i++)
         {
-            CleaningList.put(Cleaning_items[i],0);
+            int curr = k;
+
+            Button button = buttonsIds[i];
+            TextView textView = textViewsId[k];
+
+            if (button != null && textView != null) {
+
+                if(i%2==0)
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v)
+                        {
+                            MainActivity mainActivity = (MainActivity) getActivity();;
+                            mainActivity.Add(textViewsId[curr]);
+                        }
+
+                    });
+                }
+                else
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v) {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            ;
+                            mainActivity.Reduce(textViewsId[curr]);
+                        }
+                    });
+                    k++;
+                }
+            }
         }
+
+
+
+
+
+        checkout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                for(int i=0; i<textViewsId.length; i++)
+                {
+                    TextView TV = textViewsId[i];
+
+                    if (TV != null)
+                    {
+                        String sumValue = TV.getText().toString();
+
+                        if (!(sumValue.equals("0")))
+                        {
+                            CleaningList.put(Cleaning_items[i],Integer.valueOf(sumValue));
+                        }
+                    }
+                }
+
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.addCategory(CleaningList, "Cleaning");
+                mainActivity.cleanMap(CleaningList);
+                Navigation.findNavController(view).navigate(R.id.action_cleaning_to_choosing_ingredients3);
+            }
+        });
+
 
         return view;
     }

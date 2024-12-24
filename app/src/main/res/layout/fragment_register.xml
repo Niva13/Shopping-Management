@@ -32,7 +32,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="User Name:"
-        android:textSize="32dp" />
+        android:textSize="32dp"
+        />
 
     <EditText
         android:id="@+id/inputUser_nameReg"
@@ -40,8 +41,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="text"
-        android:textSize="32dp" />
+        android:textSize="32dp"
+        android:inputType="textPersonName"/>
 
     <TextView
         android:id="@+id/PasswordReg"
@@ -57,7 +58,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="numberPassword" />
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/RePasswordReg"
@@ -75,7 +76,7 @@
         android:ems="10"
 
 
-        android:inputType="numberPassword" />
+        android:inputType="textPassword" />
 
 
 
@@ -107,10 +108,11 @@
         android:id="@+id/RegButton"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="1"
 
+        android:background="@drawable/buttons_design"
         android:text="Reg" />
 
 

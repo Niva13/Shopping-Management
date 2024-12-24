@@ -3,12 +3,17 @@ package com.example.shoppingmanagement.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.activities.MainActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,15 +69,119 @@ public class Cheeses extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_cheeses, container, false);
 
+
+        View view = inflater.inflate(R.layout.fragment_cheeses, container, false);
         String[] Cheeses_Item = {"Milk", "Brie", "Yellow Cheese", "Cottage", "White Cheese", "Feta", "Cheddar", "Parmigiano", "Halloumi", "Cream"};
 
-        for(int i=0; i< Cheeses_Item.length; i++)
+        Button checkout = view.findViewById(R.id.add_cheeses);
+
+        Button[] buttonsIds =
+                {view.findViewById(R.id.IncMilk),
+                view.findViewById(R.id.DecMilk),
+                view.findViewById(R.id.IncBrie),
+                view.findViewById(R.id.DecBrie),
+                view.findViewById(R.id.IncYellow_Cheese),
+                view.findViewById(R.id.DecYellow_Cheese),
+                view.findViewById(R.id.IncCottage),
+                view.findViewById(R.id.DecCottage),
+                view.findViewById(R.id.IncWhite_Cheese),
+                view.findViewById(R.id.DecWhite_Cheese),
+                view.findViewById(R.id.IncFeta),
+                view.findViewById(R.id.DecFeta),
+                view.findViewById(R.id.IncCheddar),
+                view.findViewById(R.id.DecCheddar),
+                view.findViewById(R.id.IncParmigiano),
+                view.findViewById(R.id.DecParmigiano),
+                view.findViewById(R.id.IncHalloumi),
+                view.findViewById(R.id.DecHalloumi),
+                view.findViewById(R.id.IncCream),
+                view.findViewById(R.id.DecCream)};
+
+
+        TextView[] textViewsId = {
+                view.findViewById(R.id.sumMilk),
+                view.findViewById(R.id.sumBrie),
+                view.findViewById(R.id.sumYellow_Cheese),
+                view.findViewById(R.id.sumCottage),
+                view.findViewById(R.id.sumWhite_Cheese),
+                view.findViewById(R.id.sumFeta),
+                view.findViewById(R.id.sumCheddar),
+                view.findViewById(R.id.sumParmigiano),
+                view.findViewById(R.id.sumHalloumi),
+                view.findViewById(R.id.sumCream)};
+
+
+        int k = 0;
+
+        for (int i=0; i<buttonsIds.length; i++)
         {
-            CheesesList.put(Cheeses_Item[i],0);
+            int curr = k;
+
+            Button button = buttonsIds[i];
+            TextView textView = textViewsId[k];
+
+            if (button != null && textView != null) {
+
+                if(i%2==0)
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v)
+                        {
+                            MainActivity mainActivity = (MainActivity) getActivity();;
+                            mainActivity.Add(textViewsId[curr]);
+                        }
+
+                    });
+                }
+                else
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v) {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            ;
+                            mainActivity.Reduce(textViewsId[curr]);
+                        }
+                    });
+                    k++;
+                }
+            }
         }
+
+
+
+
+        checkout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                for(int i=0; i<textViewsId.length; i++)
+                {
+                    TextView TV = textViewsId[i];
+
+                    if (TV != null)
+                    {
+                        String sumValue = TV.getText().toString();
+
+                        if (!(sumValue.equals("0")))
+                        {
+                            CheesesList.put(Cheeses_Item[i],Integer.valueOf(sumValue));
+                        }
+                    }
+                }
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.addCategory(CheesesList, "Cheeses");
+                mainActivity.cleanMap(CheesesList);
+                Navigation.findNavController(view).navigate(R.id.action_cheeses_to_choosing_ingredients3);
+            }
+        });
+
 
         return view;
     }

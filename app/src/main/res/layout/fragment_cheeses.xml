@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -49,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -71,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -87,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -109,6 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -125,6 +130,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -147,6 +153,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -163,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -185,6 +193,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -201,6 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -223,6 +233,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -239,6 +250,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -261,6 +273,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -277,6 +290,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -299,6 +313,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -315,6 +330,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -337,6 +353,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -353,6 +370,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
     </LinearLayout>
 
@@ -375,6 +393,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="+" />
 
         <TextView
@@ -391,6 +410,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/plus_minus_sesign"
             android:text="-" />
 
     </LinearLayout>
@@ -400,7 +420,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/buttons_design"
         android:text="add to your cart"
-        android:textSize="15dp"/>
+        android:textSize="15dp" />
 
 </LinearLayout>

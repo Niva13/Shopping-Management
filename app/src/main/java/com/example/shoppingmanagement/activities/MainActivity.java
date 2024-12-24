@@ -2,6 +2,7 @@ package com.example.shoppingmanagement.activities;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,10 +28,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
+    private Map<String,Integer>itemsListTotalMian = new HashMap<>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void login(View view) {
+
+        itemsListTotalMian.clear();
         String email2 = (((EditText) findViewById(R.id.Emailinput)).getText().toString());
         String password = (((EditText) findViewById(R.id.Passwordinput)).getText().toString());
 
@@ -108,8 +115,8 @@ public class MainActivity extends AppCompatActivity {
 
         User userObj = new User(phone, user_name, email);
         myRef.setValue(userObj);
-
     }
+
 
     public void readData() {
         // Read from the database
@@ -126,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 User value = dataSnapshot.getValue(User.class);
 
                 TextView Hello_user = findViewById(R.id.the_user_profile);
-                Hello_user.setText("Hello "+value.getUser_name());
+                Hello_user.setText("Hello "+value.getUser_name()+"! Nice to see you back!");
             }
 
             @Override
@@ -135,9 +142,67 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
+
+
+    public void Reduce(TextView sum)
+    {
+        int intSum = Integer.valueOf(sum.getText().toString());
+        if (intSum>0) {
+            intSum--;
+        }
+        else {
+            Toast.makeText(MainActivity.this, "CAN'T ORDER LESS THAN 0!", Toast.LENGTH_LONG).show();
+        }
+        sum.setText(String.valueOf(intSum));
+    }
+
+
+    public void Add(TextView sum)
+    {
+        int intSum = Integer.valueOf(sum.getText().toString());
+        intSum++;
+        sum.setText(String.valueOf(intSum));
+    }
+
+
+    public void addCategory(Map categoryList, String category)
+    {
+        itemsListTotalMian.putAll(categoryList);
+        Toast.makeText(MainActivity.this, category+" added to your cart", Toast.LENGTH_LONG).show();
+    }
+
+
+    public void checkout(TextView TV)
+    {
+        if(!(itemsListTotalMian.isEmpty()))
+        {
+            StringBuilder textBuilder = new StringBuilder();
+            for (Map.Entry<String, Integer> entry : itemsListTotalMian.entrySet())
+            {
+                textBuilder.append(entry.getKey())
+                        .append(": ")
+                        .append(entry.getValue())
+                        .append("\n");
+            }
+            TV.setText(textBuilder.toString());
+            itemsListTotalMian.clear();
+        }
+        else{
+            TV.setText("No items available");
+        }
+    }
+
+    public void cleanMap(Map List)
+    {
+        List.clear();
+    }
+
+
+    public void cleanMapMain()
+    {
+        itemsListTotalMian.clear();
+    }
+
+
 }

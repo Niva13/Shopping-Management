@@ -3,12 +3,16 @@ package com.example.shoppingmanagement.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.activities.MainActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,11 +72,114 @@ public class Vevetable extends Fragment {
         View view = inflater.inflate(R.layout.fragment_vevetable, container, false);
 
         String[] Vegetable_items = {"Carrot", "Cucumber", "Tomato", "Potato", "Lettuce", "Cabbage", "Pepper", "Garlic", "Onion", "Corn"};
+        Button checkout = view.findViewById(R.id.add_vegetables);
 
-        for(int i=0; i< Vegetable_items.length; i++)
+
+        Button[] buttonsIds ={
+                view.findViewById(R.id.IncCarrot),
+                view.findViewById(R.id.DecCarrot),
+                view.findViewById(R.id.IncCucumber),
+                view.findViewById(R.id.DecCucumber),
+                view.findViewById(R.id.IncTomato),
+                view.findViewById(R.id.DecTomato),
+                view.findViewById(R.id.IncPotato),
+                view.findViewById(R.id.DecPotato),
+                view.findViewById(R.id.IncLettuce),
+                view.findViewById(R.id.DecLettuce),
+                view.findViewById(R.id.IncCabbage),
+                view.findViewById(R.id.DecCabbage),
+                view.findViewById(R.id.IncPepper),
+                view.findViewById(R.id.DecPepper),
+                view.findViewById(R.id.IncGarlic),
+                view.findViewById(R.id.DecGarlic),
+                view.findViewById(R.id.IncOnion),
+                view.findViewById(R.id.DecOnion),
+                view.findViewById(R.id.IncCorn),
+                view.findViewById(R.id.DecCorn)
+        };
+
+        TextView[] textViewsId = {
+                view.findViewById(R.id.sumCarrot),
+                view.findViewById(R.id.sumCucumber),
+                view.findViewById(R.id.sumTomato),
+                view.findViewById(R.id.sumPotato),
+                view.findViewById(R.id.sumLettuce),
+                view.findViewById(R.id.sumCabbage),
+                view.findViewById(R.id.sumPepper),
+                view.findViewById(R.id.sumGarlic),
+                view.findViewById(R.id.sumOnion),
+                view.findViewById(R.id.sumCorn)
+        };
+
+
+        int k = 0;
+
+        for (int i=0; i<buttonsIds.length; i++)
         {
-            VegetableList.put(Vegetable_items[i],0);
+            int curr = k;
+
+            Button button = buttonsIds[i];
+            TextView textView = textViewsId[k];
+
+            if (button != null && textView != null) {
+
+                if(i%2==0)
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v)
+                        {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            mainActivity.Add(textViewsId[curr]);
+                        }
+
+                    });
+                }
+                else
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v) {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            mainActivity.Reduce(textViewsId[curr]);
+                        }
+                    });
+                    k++;
+                }
+            }
         }
+
+
+
+        checkout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                for(int i=0; i<textViewsId.length; i++)
+                {
+                    TextView TV = textViewsId[i];
+
+                    if (TV != null)
+                    {
+                        String sumValue = TV.getText().toString();
+
+                        if (!(sumValue.equals("0")))
+                        {
+                            VegetableList.put(Vegetable_items[i],Integer.valueOf(sumValue));
+                        }
+                    }
+                }
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.addCategory(VegetableList, "Vegetable");
+                mainActivity.cleanMap(VegetableList);
+                Navigation.findNavController(view).navigate(R.id.action_vevetable_to_choosing_ingredients3);
+            }
+        });
+
 
         return view;
     }

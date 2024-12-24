@@ -3,14 +3,20 @@ package com.example.shoppingmanagement.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.shoppingmanagement.R;
+import com.example.shoppingmanagement.activities.MainActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,15 +70,103 @@ public class Meat extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_meat, container, false);
-
         String[] Meat_items = {"Chicken breast", "Chicken liver", "Schnitzel", "Entrecote", "Wings", "Hot dog", "Asado", "Salmon", "Tuna", "Kebab",};
+        Button checkout = view.findViewById(R.id.add_meat);
 
-        for(int i=0; i< Meat_items.length; i++)
+        Button[] buttonsIds =
+                {view.findViewById(R.id.IncChicken_breast), view.findViewById(R.id.DecChicken_breast),
+                        view.findViewById(R.id.IncChicken_liver), view.findViewById(R.id.DecChicken_liver),
+                        view.findViewById(R.id.IncSchnitzel), view.findViewById(R.id.DecSchnitzel),
+                        view.findViewById(R.id.IncEntrecote), view.findViewById(R.id.DecEntrecote),
+                        view.findViewById(R.id.IncWings), view.findViewById(R.id.DecWings),
+                        view.findViewById(R.id.IncHot_dog), view.findViewById(R.id.DecHot_dog),
+                        view.findViewById(R.id.IncAsado), view.findViewById(R.id.DecAsado),
+                        view.findViewById(R.id.IncSalmon), view.findViewById(R.id.DecSalmon),
+                        view.findViewById(R.id.IncTuna), view.findViewById(R.id.DecTuna),
+                        view.findViewById(R.id.IncKebab), view.findViewById(R.id.DecKebab)};
+
+
+        TextView[] textViewsId = {
+                view.findViewById(R.id.sumChicken_breast), view.findViewById(R.id.sumChicken_liver),
+                view.findViewById(R.id.sumSchnitzel), view.findViewById(R.id.sumEntrecote),
+                view.findViewById(R.id.sumWings), view.findViewById(R.id.sumHot_dog),
+                view.findViewById(R.id.sumAsado), view.findViewById(R.id.sumSalmon),
+                view.findViewById(R.id.sumTuna), view.findViewById(R.id.sumKebab)};
+
+
+        int k = 0;
+
+        for (int i=0; i<buttonsIds.length; i++)
         {
-            MeatList.put(Meat_items[i],0);
+            int curr = k;
+
+            Button button = buttonsIds[i];
+            TextView textView = textViewsId[k];
+
+            if (button != null && textView != null) {
+
+                if(i%2==0)
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v)
+                        {
+                            MainActivity mainActivity = (MainActivity) getActivity();;
+                            mainActivity.Add(textViewsId[curr]);
+                        }
+
+                    });
+                }
+                else
+                {
+                    buttonsIds[i].setOnClickListener(new View.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(View v) {
+                            MainActivity mainActivity = (MainActivity) getActivity();
+                            ;
+                            mainActivity.Reduce(textViewsId[curr]);
+                        }
+                    });
+                    k++;
+                }
+            }
         }
+
+
+
+
+        checkout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                for(int i=0; i<textViewsId.length; i++)
+                {
+                    TextView TV = textViewsId[i];
+
+                    if (TV != null)
+                    {
+                        String sumValue = TV.getText().toString();
+
+                        if (!(sumValue.equals("0")))
+                        {
+                            MeatList.put(Meat_items[i],Integer.valueOf(sumValue));
+                        }
+                    }
+                }
+
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.addCategory(MeatList, "Meat");
+                mainActivity.cleanMap(MeatList);
+                Navigation.findNavController(view).navigate(R.id.action_meat_to_choosing_ingredients3);
+            }
+        });
+
+
 
         return view;
     }

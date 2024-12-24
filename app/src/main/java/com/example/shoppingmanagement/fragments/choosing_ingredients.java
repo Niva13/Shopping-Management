@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public class choosing_ingredients extends Fragment {
 
-    public Map<String,Integer>itemsList = new HashMap<>();
+    //public Map<String,Integer>itemsListTotal = new HashMap<>();
 
     @Override
     public void onResume() {
@@ -84,8 +84,8 @@ public class choosing_ingredients extends Fragment {
                              Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.fragment_choosing_ingredients, container, false);
-        TextView userPofileTB = view.findViewById(R.id.the_user_profile);
-        Button button = view.findViewById(R.id.logout);
+        //TextView userPofileTB = view.findViewById(R.id.the_user_profile);
+        Button logout = view.findViewById(R.id.logout);
         MainActivity mainActivity = (MainActivity) getActivity();
 
         Button cheeses = view.findViewById(R.id.cheesesButton);
@@ -94,30 +94,11 @@ public class choosing_ingredients extends Fragment {
         Button meat = view.findViewById(R.id.meatButton);
         Button cleaning_materials = view.findViewById(R.id.cleaning_materialsButton);
         Button snacks = view.findViewById(R.id.snacksButton);
+        Button checkout = view.findViewById(R.id.checkout);
 
-        String[] all_items = {
-                "Milk", "Brie", "Yellow Cheese", "Cottage", "White Cheese", "Feta", "Cheddar", "Parmigiano", "Halloumi", "Cream",
-                "Carrot", "Cucumber", "Tomato", "Potato", "Lettuce", "Cabbage", "Pepper", "Garlic", "Onion", "Corn",
-                "Chicken breast", "Chicken liver", "Schnitzel", "Entrecote", "Wings", "Hot dog", "Asado", "Salmon", "Tuna", "Kebab",
-                "Banana", "Apple", "Orange", "Clementine", "Pear", "Strawberries", "Watermelon", "Melon", "Dates", "Coconut",
-                "Chocolate", "Potato Chips", "Bamba", "Doritos", "Popcorn", "Beasley", "M And M", "Marshmallow", "Toffee", "Gummy Bears",
-                "Bleach", "Dish Soap", "Broom", "Washing Gel", "Body Soap", "Shampoo", "Hair Conditioner", "Toilet Paper", "Toothbrush", "Toothpaste"};
-
-        for(int i=0; i< all_items.length; i++)
-        {
-            itemsList.put(all_items[i],0);
-        }
-
-
-
-        //String userPofile =
         mainActivity.readData();
-        //userPofileTB.setText(userPofile);
 
-
-
-
-        button.setOnClickListener(new View.OnClickListener()
+        logout.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -189,11 +170,14 @@ public class choosing_ingredients extends Fragment {
 
 
 
-
-
-
-
-
+        checkout.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Navigation.findNavController(view).navigate(R.id.action_choosing_ingredients3_to_checkout2);
+            }
+        });
 
 
         return view;
